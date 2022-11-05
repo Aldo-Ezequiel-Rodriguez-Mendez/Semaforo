@@ -1,0 +1,37 @@
+C:\Users\maria\Trabajos escolares\TEC\Semestre 8\Sist Programables\Unidad 3\Programa\Practica 3\Practica 3\bin\Debug\Practica 3.exe.config
+C:\Users\maria\Trabajos escolares\TEC\Semestre 8\Sist Programables\Unidad 3\Programa\Practica 3\Practica 3\bin\Debug\Practica 3.exe
+C:\Users\maria\Trabajos escolares\TEC\Semestre 8\Sist Programables\Unidad 3\Programa\Practica 3\Practica 3\bin\Debug\Practica 3.pdb
+C:\Users\maria\Trabajos escolares\TEC\Semestre 8\Sist Programables\Unidad 3\Programa\Practica 3\Practica 3\obj\Debug\Practica 3.csprojAssemblyReference.cache
+C:\Users\maria\Trabajos escolares\TEC\Semestre 8\Sist Programables\Unidad 3\Programa\Practica 3\Practica 3\obj\Debug\Practica_3.Form1.resources
+C:\Users\maria\Trabajos escolares\TEC\Semestre 8\Sist Programables\Unidad 3\Programa\Practica 3\Practica 3\obj\Debug\Practica_3.Properties.Resources.resources
+C:\Users\maria\Trabajos escolares\TEC\Semestre 8\Sist Programables\Unidad 3\Programa\Practica 3\Practica 3\obj\Debug\Practica 3.csproj.GenerateResource.cache
+C:\Users\maria\Trabajos escolares\TEC\Semestre 8\Sist Programables\Unidad 3\Programa\Practica 3\Practica 3\obj\Debug\Practica 3.exe
+C:\Users\maria\Trabajos escolares\TEC\Semestre 8\Sist Programables\Unidad 3\Programa\Practica 3\Practica 3\obj\Debug\Practica 3.pdb
+C:\Users\maria\Desktop\Programa\Practica 3\Practica 3\bin\Debug\Practica 3.exe.config
+C:\Users\maria\Desktop\Programa\Practica 3\Practica 3\bin\Debug\Practica 3.exe
+C:\Users\maria\Desktop\Programa\Practica 3\Practica 3\bin\Debug\Practica 3.pdb
+C:\Users\maria\Desktop\Programa\Practica 3\Practica 3\obj\Debug\Practica 3.csprojAssemblyReference.cache
+C:\Users\maria\Desktop\Programa\Practica 3\Practica 3\obj\Debug\Practica_3.Form1.resources
+C:\Users\maria\Desktop\Programa\Practica 3\Practica 3\obj\Debug\Practica_3.Properties.Resources.resources
+C:\Users\maria\Desktop\Programa\Practica 3\Practica 3\obj\Debug\Practica 3.csproj.GenerateResource.cache
+C:\Users\maria\Desktop\Programa\Practica 3\Practica 3\obj\Debug\Practica 3.exe
+C:\Users\maria\Desktop\Programa\Practica 3\Practica 3\obj\Debug\Practica 3.pdb
+C:\Users\Rodolfo Gallardo\Desktop\Practica 3\Practica 3\bin\Debug\Practica 3.exe.config
+C:\Users\Rodolfo Gallardo\Desktop\Practica 3\Practica 3\bin\Debug\Practica 3.exe
+C:\Users\Rodolfo Gallardo\Desktop\Practica 3\Practica 3\bin\Debug\Practica 3.pdb
+C:\Users\Rodolfo Gallardo\Desktop\Practica 3\Practica 3\obj\Debug\Practica 3.csprojAssemblyReference.cache
+C:\Users\Rodolfo Gallardo\Desktop\Practica 3\Practica 3\obj\Debug\Practica_3.Form1.resources
+C:\Users\Rodolfo Gallardo\Desktop\Practica 3\Practica 3\obj\Debug\Practica_3.Properties.Resources.resources
+C:\Users\Rodolfo Gallardo\Desktop\Practica 3\Practica 3\obj\Debug\Practica 3.csproj.GenerateResource.cache
+C:\Users\Rodolfo Gallardo\Desktop\Practica 3\Practica 3\obj\Debug\Practica 3.exe
+C:\Users\Rodolfo Gallardo\Desktop\Practica 3\Practica 3\obj\Debug\Practica 3.pdb
+C:\Users\megaa\Desktop\Practica 3\Practica 3\bin\Debug\Practica 3.exe.config
+C:\Users\megaa\Desktop\Practica 3\Practica 3\bin\Debug\Practica 3.exe
+C:\Users\megaa\Desktop\Practica 3\Practica 3\bin\Debug\Practica 3.pdb
+C:\Users\megaa\Desktop\Practica 3\Practica 3\obj\Debug\Practica 3.csprojAssemblyReference.cache
+C:\Users\megaa\Desktop\Practica 3\Practica 3\obj\Debug\Practica_3.Form1.resources
+C:\Users\megaa\Desktop\Practica 3\Practica 3\obj\Debug\Practica_3.Properties.Resources.resources
+C:\Users\megaa\Desktop\Practica 3\Practica 3\obj\Debug\Practica 3.csproj.GenerateResource.cache
+C:\Users\megaa\Desktop\Practica 3\Practica 3\obj\Debug\Practica 3.csproj.CoreCompileInputs.cache
+C:\Users\megaa\Desktop\Practica 3\Practica 3\obj\Debug\Practica 3.exe
+C:\Users\megaa\Desktop\Practica 3\Practica 3\obj\Debug\Practica 3.pdb
