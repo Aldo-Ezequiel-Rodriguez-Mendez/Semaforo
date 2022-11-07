@@ -35,3 +35,13 @@ C:\Users\megaa\Desktop\Practica 3\Practica 3\obj\Debug\Practica 3.csproj.Generat
 C:\Users\megaa\Desktop\Practica 3\Practica 3\obj\Debug\Practica 3.csproj.CoreCompileInputs.cache
 C:\Users\megaa\Desktop\Practica 3\Practica 3\obj\Debug\Practica 3.exe
 C:\Users\megaa\Desktop\Practica 3\Practica 3\obj\Debug\Practica 3.pdb
+C:\Users\megaa\Documents\GitHub\Semaforo\Proyecto en C#\Practica 3\bin\Debug\Practica 3.exe.config
+C:\Users\megaa\Documents\GitHub\Semaforo\Proyecto en C#\Practica 3\bin\Debug\Practica 3.exe
+C:\Users\megaa\Documents\GitHub\Semaforo\Proyecto en C#\Practica 3\bin\Debug\Practica 3.pdb
+C:\Users\megaa\Documents\GitHub\Semaforo\Proyecto en C#\Practica 3\obj\Debug\Practica_3.Properties.Resources.resources
+C:\Users\megaa\Documents\GitHub\Semaforo\Proyecto en C#\Practica 3\obj\Debug\Practica 3.csproj.GenerateResource.cache
+C:\Users\megaa\Documents\GitHub\Semaforo\Proyecto en C#\Practica 3\obj\Debug\Practica 3.csproj.CoreCompileInputs.cache
+C:\Users\megaa\Documents\GitHub\Semaforo\Proyecto en C#\Practica 3\obj\Debug\Practica 3.exe
+C:\Users\megaa\Documents\GitHub\Semaforo\Proyecto en C#\Practica 3\obj\Debug\Practica 3.pdb
+C:\Users\megaa\Documents\GitHub\Semaforo\Proyecto en C#\Practica 3\obj\Debug\Practica_3.frmSimulacion.resources
+C:\Users\megaa\Documents\GitHub\Semaforo\Proyecto en C#\Practica 3\obj\Debug\Practica 3.csprojAssemblyReference.cache

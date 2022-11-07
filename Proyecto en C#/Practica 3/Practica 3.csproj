@@ -59,18 +59,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -81,118 +81,24 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\0.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\2.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\3.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\4.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\5.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\6.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\7.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\8.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\9.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\off.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Vía 2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SMHLeftAm.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SMHLeftOf.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SMHLeftRo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SMHLeftVe.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SMHRightAm.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SMHRightOf.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SMHRightRo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SMHRightVe.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SMVLeftAm.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SMVLeftOf.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SMVLeftRo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SMVLeftVe.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SMVRighOft.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SMVRightAm.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SMVRightRo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SMVRightVe.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Vía.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SMHLeftAm1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SMHLeftOf1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SMHLeftRo1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SMHLeftVe1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SMHRightAm1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SMHRightOf1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SMHRightRo1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SMHRightVe1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SMHRightVe2.png" />
+    <Content Include="Resources\SMHLeftAm1.png" />
+    <Content Include="Resources\SMHLeftOf1.png" />
+    <Content Include="Resources\SMHLeftRo1.png" />
+    <Content Include="Resources\SMHLeftVe1.png" />
+    <Content Include="Resources\SMHRightAm1.png" />
+    <Content Include="Resources\SMHRightOf1.png" />
+    <Content Include="Resources\SMHRightRo1.png" />
+    <Content Include="Resources\SMHRightVe1.png" />
+    <Content Include="Resources\SMHRightVe2.png" />
+    <Content Include="Resources\SMVLeftAm.png" />
+    <Content Include="Resources\SMVLeftOf.png" />
+    <Content Include="Resources\SMVLeftRo.png" />
+    <Content Include="Resources\SMVLeftVe.png" />
+    <Content Include="Resources\SMVRighOft.png" />
+    <Content Include="Resources\SMVRightAm.png" />
+    <Content Include="Resources\SMVRightRo.png" />
+    <Content Include="Resources\SMVRightVe.png" />
+    <Content Include="Resources\Vía.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

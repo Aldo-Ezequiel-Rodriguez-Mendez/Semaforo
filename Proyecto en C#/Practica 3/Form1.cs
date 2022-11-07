@@ -10,103 +10,70 @@ using System.Windows.Forms;
 
 namespace Practica_3
 {
-    public partial class Form1 : Form
+    public partial class frmSimulacion : Form
     {
-        int evento = 1;
-        int contadorOff = 0;//Cuenta el parpadeo del semáforo
-        int swDisplay = 0; //Lleva el control del display en forma default
-        int swDisplayCont = 0; // Lleva el control del display cuando se establecen los tiempos
-        bool swParpadeo = false;// Controla en el display el parpadeo del semáforo
-        bool cicloVertical =true;
-        public Form1()
+        int caso = 1, contadorApagado = 0, casoConteoDisplay = 0, contarTiempo = 0;
+        bool cicloVertical = true;
+
+        public frmSimulacion()
         {
             InitializeComponent();
         }
-        private void btnCargarIntermitentes_Click(object sender, EventArgs e)
+        private void btnPreventivas_Click(object sender, EventArgs e)
         {
-            tmrIntermitentes.Start();
+            tmrPreventivas.Start();
             btnDetener.Enabled = true;
         }
 
-        //Timer que controla los semáforos
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            
-            switch(evento)
-            {
-                case 1:if (cicloVertical){ OnVerdeV(); OnRojoH(); } else { OnVerdeH(); OnRojoV(); }// Evento #1  Verde
-                    timer1.Interval = (tiempoVerde-500); evento = 2;break;                
-                case 2: if (cicloVertical) { OffV(); } else { OffH(); };            // Evento #2
-                    timer1.Interval = 500;                                              //  |
-                    if (contadorOff== tiempoVerdePrp / 1000)                                                 //  |Parpadeo
-                    {                                                                   //  |del
-                        timer1.Interval = 500; evento = 4; contadorOff = 0;             //  |semáforo
-                    }                                                                   //  |en
-                    else { evento = 3; }                                                //  |color  
-                    break;                                                              //  |verde
-                case 3: if (cicloVertical) { OnVerdeV(); } else { OnVerdeH(); }         //  |
-                        timer1.Interval = 500; contadorOff++; evento = 2;break;      //Evento #2                                    //  Evento #2
-                case 4: if (cicloVertical) { OnAmarilloV(); } else { OnAmarilloH(); }//Evento #3 Amarillo
-                    timer1.Interval = (tiempoAmarillo-500); evento = 5;break;
-                case 5: if (cicloVertical) { OffV(); } else { OffH(); }             //Evento #3 Amarillo apagado
-                    timer1.Interval = 500; evento = 6;break;
-                case 6: if (cicloVertical) { OnRojoV(); } else { OnRojoH(); }        // Evento #4 Rojo
-                    timer1.Interval = (tiempoRojo-500); evento = 7; break;                      
-                case 7: if (cicloVertical) { cicloVertical = false; OffH(); } else { cicloVertical = true; OffV(); }
-                    //  
-                    evento = 1;
-                    timer1.Interval = 500; break;
-            }
-        }
-
-        //Timer que controla el conteo del Display
+        //Timer para el conteo en los displays
         private void tmrDisplay_Tick(object sender, EventArgs e)
         {
             tmrDisplay.Interval = 1000;
-            switch (swDisplayCont)
+            switch (casoConteoDisplay)
             {
-                case 1: lblVerde9.Text = contarTiempos.ToString();
-                    lblVerde9.ForeColor = Color.Green; lblVerde10.ForeColor = Color.Green;
-                    if (contarTiempos == (tiempoVerde/1000)+1)
-                       { 
-                        swDisplayCont=2; contarTiempos = 1;
-                        lblVerde9.Text = contarTiempos.ToString();
-                        contarTiempos++;
+                case 1: lblDisplayVerde.Text = contarTiempo.ToString();
+                    lblDisplayVerde.ForeColor = Color.Green; lblVerdeAuxiliar.ForeColor = Color.Green;
+                    if (contarTiempo == (segundosVerde / 1000)+1)
+                       {
+                        casoConteoDisplay = 2; contarTiempo = 1;
+                        lblDisplayVerde.Text = contarTiempo.ToString();
+                        contarTiempo++;
                     }
-                    else { contarTiempos++; }
+                    else { contarTiempo++; }
                     break;
                 case 2:
-                    lblVerde9.Text = contarTiempos.ToString();
-                    if (contarTiempos==(tiempoVerdePrp/1000)+1)
-                    { 
-                        swDisplayCont = 3;
-                        contarTiempos = 1;
-                        lblVerde9.Text = "0";
-                        lblAmarillo.ForeColor = Color.FromArgb(241, 236, 37);
-                        lblAmarillo.Text = contarTiempos.ToString();
-                        contarTiempos++;
+                    lblDisplayVerde.Text = contarTiempo.ToString();
+                    if (contarTiempo == (segundosVerdePrp / 1000)+1)
+                    {
+                        casoConteoDisplay = 3;
+                        contarTiempo = 1;
+                        lblDisplayVerde.Text = "0";
+                        lblDisplayAmarillo.ForeColor = Color.FromArgb(241, 236, 37);
+                        lblDisplayAmarillo.Text = contarTiempo.ToString();
+                        contarTiempo++;
                     }
-                    else { contarTiempos++; }                    
+                    else { contarTiempo++; }                    
                     break;
                 case 3:
-                    lblAmarillo.Text = contarTiempos.ToString();
-                    if (contarTiempos == (tiempoAmarillo/1000)+1)
-                    { 
-                        swDisplayCont = 4; contarTiempos = 1; 
-                        lblAmarillo.Text = "0";
-                        lblRojo.ForeColor = Color.FromArgb(136, 5, 6);
-                        lblRojo.Text = contarTiempos.ToString();
-                        contarTiempos++;
+                    lblDisplayAmarillo.Text = contarTiempo.ToString();
+                    if (contarTiempo == (segundosAmarillo / 1000)+1)
+                    {
+                        casoConteoDisplay = 4; contarTiempo = 1; 
+                        lblDisplayAmarillo.Text = "0";
+                        lblDisplayRojo.ForeColor = Color.FromArgb(136, 5, 6);
+                        lblDisplayRojo.Text = contarTiempo.ToString();
+                        contarTiempo++;
                     }
-                    else { contarTiempos++; }                    
+                    else { contarTiempo++; }                    
                     break;
                 case 4:
-                    lblRojo.Text = contarTiempos.ToString();
-                    if (contarTiempos == (tiempoRojo/1000)+1)
-                    { swDisplayCont = 1; contarTiempos = 1; lblRojo.Text = "0"; ApagarDisplays();
-                      tmrDisplay.Interval = 1;
+                    lblDisplayRojo.Text = contarTiempo.ToString();
+                    if (contarTiempo == (segundosRojo / 1000)+1)
+                    {
+                        casoConteoDisplay = 1; contarTiempo = 1; lblDisplayRojo.Text = "0"; ApagarDisplays();
+                        tmrDisplay.Interval = 1;
                     }
-                    else { contarTiempos++; }                    
+                    else { contarTiempo++; }                    
                     break;
                 case 5:
                     {
@@ -118,81 +85,80 @@ namespace Practica_3
 
         #region Métodos para cambiar imágenes
 
-            #region Sémaforos Verticales
-        public void OnVerdeV() // Enciende los semáforos verdes verticales
+                #region Sémaforos Verticales
+                public void enciendeVerdeV()
+                {
+                    pcbDerechaV.Image = Properties.Resources.SMVLeftVe;
+                    pcbIzquierdaV.Image = Properties.Resources.SMVRightVe;
+                }
+                public void enciendeAmarilloV()
+                {
+                    pcbDerechaV.Image = Properties.Resources.SMVLeftAm;
+                    pcbIzquierdaV.Image = Properties.Resources.SMVRightAm;
+                }
+                public void enciendeRojoV()
+                {
+                    pcbDerechaV.Image = Properties.Resources.SMVLeftRo;
+                    pcbIzquierdaV.Image = Properties.Resources.SMVRightRo;
+                }
+                public void apagaTodosV()
+                {
+                    pcbDerechaV.Image = Properties.Resources.SMVLeftOf;
+                    pcbIzquierdaV.Image = Properties.Resources.SMVRighOft;
+                }
+                #endregion
+
+        void enciendeTodosAmarillos()
         {
-            pcbVLeft.Image = Properties.Resources.SMVLeftVe;
-            pcbVRight.Image = Properties.Resources.SMVRightVe;
+            pcbDerechaH.Image = Properties.Resources.SMHLeftAm1;
+            pcbIzquierdaH.Image = Properties.Resources.SMHRightAm1;
+            System.Threading.Thread.Sleep(200);
+            pcbDerechaV.Image = Properties.Resources.SMVLeftAm;
+            pcbIzquierdaV.Image = Properties.Resources.SMVRightAm;
+            System.Threading.Thread.Sleep(200);
         }
-        public void OnAmarilloV() // Enciende los semáforos amarillos verticales
+        void apagaTodos()
         {
-            pcbVLeft.Image = Properties.Resources.SMVLeftAm;
-            pcbVRight.Image = Properties.Resources.SMVRightAm;
+            pcbDerechaH.Image = Properties.Resources.SMHLeftOf1;
+            pcbIzquierdaH.Image = Properties.Resources.SMHRightOf1;
+            System.Threading.Thread.Sleep(200);
+            pcbDerechaV.Image = Properties.Resources.SMVLeftOf;
+            pcbIzquierdaV.Image = Properties.Resources.SMVRighOft;
+            System.Threading.Thread.Sleep(200);
         }
-        public void OnRojoV() // Enciende los semáforos rojos verticales
-        {
-            pcbVLeft.Image = Properties.Resources.SMVLeftRo;
-            pcbVRight.Image = Properties.Resources.SMVRightRo;
-        }
-        public void OffV() // Apaga los semáforos verdes verticales
-        {
-            pcbVLeft.Image = Properties.Resources.SMVLeftOf;
-            pcbVRight.Image = Properties.Resources.SMVRighOft;
-        }
+                #region Semáforos Horizontales        
+                public void enciendeVerdeH()
+                {
+                    pcbDerechaH.Image = Properties.Resources.SMHLeftVe1;
+                    pcbIzquierdaH.Image = Properties.Resources.SMHRightVe2;
+                }
+                public void enciendeAmarilloH()
+                {
+                    pcbDerechaH.Image = Properties.Resources.SMHLeftAm1;
+                    pcbIzquierdaH.Image = Properties.Resources.SMHRightAm1;
+                }
+                public void enciendeRojoH()
+                {
+                    pcbDerechaH.Image = Properties.Resources.SMHLeftRo1;
+                    pcbIzquierdaH.Image = Properties.Resources.SMHRightRo1;
+                }
+                public void apagaTodosH()
+                {
+                    pcbDerechaH.Image = Properties.Resources.SMHLeftOf1;
+                    pcbIzquierdaH.Image = Properties.Resources.SMHRightOf1;
+                }
+                #endregion
+
         #endregion
 
-        void OnAllAmarrillos()//Enciende todos los amarillos
-        {
-            pcbHLeft.Image = Properties.Resources.SMHLeftAm1;
-            pcbHRight.Image = Properties.Resources.SMHRightAm1;
-            System.Threading.Thread.Sleep(200);
-            pcbVLeft.Image = Properties.Resources.SMVLeftAm;
-            pcbVRight.Image = Properties.Resources.SMVRightAm;
-            System.Threading.Thread.Sleep(200);
-        }
-        void OffAll()//Apaga todos los semaforos 
-        {
-            pcbHLeft.Image = Properties.Resources.SMHLeftOf1;
-            pcbHRight.Image = Properties.Resources.SMHRightOf1;
-            System.Threading.Thread.Sleep(200);
-            pcbVLeft.Image = Properties.Resources.SMVLeftOf;
-            pcbVRight.Image = Properties.Resources.SMVRighOft;
-            System.Threading.Thread.Sleep(200);
-        }
-            #region Semáforos Horizontales        
-        public void OnVerdeH() // Enciende los semáforos verdes horizontales
-        {
-            pcbHLeft.Image = Properties.Resources.SMHLeftVe1;
-            pcbHRight.Image = Properties.Resources.SMHRightVe2;
-        }
-        public void OnAmarilloH() // Enciende los semáforos amarillos horizontales
-        {
-            pcbHLeft.Image = Properties.Resources.SMHLeftAm1;
-            pcbHRight.Image = Properties.Resources.SMHRightAm1;
-        }
-        public void OnRojoH() // Enciende los semáforos rojos horizontales
-        {
-            pcbHLeft.Image = Properties.Resources.SMHLeftRo1;
-            pcbHRight.Image = Properties.Resources.SMHRightRo1;
-        }
-        public void OffH() // Apaga los semáforos verdes horizontales
-        {
-            pcbHLeft.Image = Properties.Resources.SMHLeftOf1;
-            pcbHRight.Image = Properties.Resources.SMHRightOf1;
-        }
-            #endregion
-
-        #endregion
-
-        #region Panel de Control
-     
+        #region Menu de Control
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-            tiempoVerde = 15000;
-            tiempoVerdePrp = 3000;
-            tiempoAmarillo = 3000;
-            tiempoRojo = 2000;
-            Iniciar();
+            segundosVerde = 3000;
+            segundosVerdePrp = 3000;
+            segundosAmarillo = 3000;
+            segundosRojo = 2000;
+            IniciarSimulacion();
         }
     
         private void btnDetener_Click(object sender, EventArgs e)
@@ -200,99 +166,105 @@ namespace Practica_3
             Detener();
         }
 
-        public void Iniciar()
+        public void IniciarSimulacion()
         {
-            swDisplayCont++;
-            contarTiempos = 1;
-            timer1.Start();
+            casoConteoDisplay++;
+            contarTiempo = 1;
+            tmrCambioSemaforos.Start();
             tmrDisplay.Start();            
             tmrDisplay.Interval = 1;
             btnDetener.Enabled = true;
             btnIniciar.Enabled = false;
-            btnCambioTiempo.Enabled = false;
         }
         public void ApagarDisplays()
         {
-            lblVerde9.Text = "0"; lblVerde9.ForeColor = Color.DimGray;
-            lblVerde10.Text = "0"; lblVerde10.ForeColor = Color.DimGray;
-            lblAmarillo.Text = "0"; lblAmarillo.ForeColor = Color.DimGray;
-            lblRojo.Text = "0"; lblRojo.ForeColor = Color.DimGray;
+            lblDisplayVerde.Text = "0"; lblDisplayVerde.ForeColor = Color.DimGray;
+            lblVerdeAuxiliar.Text = "0"; lblVerdeAuxiliar.ForeColor = Color.DimGray;
+            lblDisplayAmarillo.Text = "0"; lblDisplayAmarillo.ForeColor = Color.DimGray;
+            lblDisplayRojo.Text = "0"; lblDisplayRojo.ForeColor = Color.DimGray;
         }
         public void Detener()
         {
-            timer1.Stop(); tmrDisplay.Stop();
-            OffV(); OffH();
+            tmrCambioSemaforos.Stop(); tmrDisplay.Stop();
+            apagaTodosV(); apagaTodosH();
             ApagarDisplays();
-            tmrIntermitentes.Stop();
-            timer1.Interval = 10;
-            evento = 1; // Control para el semáforo
-            swDisplay = 0;//Control para el display 
-            contadorOff = 0;//Contador para el display en los parpadeos del semáforo
-            cicloVertical = true; // Comienza con los semáforos verticales
-            swParpadeo = false;
+            tmrPreventivas.Stop();
+            tmrCambioSemaforos.Interval = 10;
+            caso = 1;                               // Control para el semáforo
+            contadorApagado = 0;                    //Contador para el display en los parpadeos del semáforo
+            cicloVertical = true;                   // Comienza con los semáforos verticales
             btnIniciar.Enabled = true;
-            btnCambioTiempo.Enabled = true;
             btnDetener.Enabled = false;
-            swDisplayCont = 0;
-            contarTiempos = 0; total = 0;
-            tiempoRojo = 0; tiempoAmarillo = 0; tiempoVerde = 0; tiempoVerdePrp = 0;
+            casoConteoDisplay = 0;
+            contarTiempo = 0;
+            segundosRojo = 0; segundosAmarillo = 0; segundosVerde = 0; segundosVerdePrp = 0;
         }
 
-        int tiempoRojo=0, tiempoAmarillo=0, tiempoVerde=0, tiempoVerdePrp=0;
-        int total = 0;
-        //int cambiarTiempos = 0;
-        int contarTiempos = 0;
+        int segundosRojo=0, segundosAmarillo=0, segundosVerde=0, segundosVerdePrp=0;
+
+
+        //Timer para el control de cambio de color en los semáforos
+        private void tmrCambioSemaforos_Tick_1(object sender, EventArgs e)
+        {
+            switch (caso)
+            {
+                case 1:
+                    if (cicloVertical) { enciendeVerdeV(); enciendeRojoH(); } else { enciendeVerdeH(); enciendeRojoV(); }   // CASO 1 - enciende en VERDE
+                    tmrCambioSemaforos.Interval = (segundosVerde - 500); caso = 2; break;
+                case 2:
+                    if (cicloVertical) { apagaTodosV(); } else { apagaTodosH(); };            // CASO 2 - apaga todos los semaforos
+                    tmrCambioSemaforos.Interval = 500;                                      
+                    if (contadorApagado == segundosVerdePrp / 1000)                          //  PARPADEO del semáforo (apagado)
+                    {                                                                       
+                        tmrCambioSemaforos.Interval = 500; caso = 4; contadorApagado = 0;   
+                    }                                                                       
+                    else { caso = 3; }                                                       
+                    break;                                                                   
+                case 3:
+                    if (cicloVertical) { enciendeVerdeV(); } else { enciendeVerdeH(); }                
+                    tmrCambioSemaforos.Interval = 500; contadorApagado++; caso = 2; break;  //PARPADEO del semáforo (encendido) regresando al caso 2  
+                case 4:
+                    if (cicloVertical) { enciendeAmarilloV(); } else { enciendeAmarilloH(); }           //CASO 3 - enciende en AMARILLO
+                    tmrCambioSemaforos.Interval = (segundosAmarillo - 500); caso = 5; break;
+                case 5:
+                    if (cicloVertical) { apagaTodosV(); } else { apagaTodosH(); }                         //CASO 3 - apaga el AMARILLO
+                    tmrCambioSemaforos.Interval = 500; caso = 6; break;
+                case 6:
+                    if (cicloVertical) { enciendeRojoV(); } else { enciendeRojoH(); }                   //CASO 4 - enciende en ROJO
+                    tmrCambioSemaforos.Interval = (segundosRojo - 500); caso = 7; break;
+                case 7:
+                    if (cicloVertical) { cicloVertical = false; apagaTodosH(); } else { cicloVertical = true; apagaTodosV(); }
+                    //  
+                    caso = 1;
+                    tmrCambioSemaforos.Interval = 500; break;
+            }
+        }
 
         bool bolIntermitentePrendida = false;
         private void tmrIntermitentes_Tick(object sender, EventArgs e)
         {
             if (bolIntermitentePrendida)
             {
-                OffAll();
+                apagaTodos();
                 ApagarDisplays();
                 bolIntermitentePrendida = false;
             }
             else
             {
-                OnAllAmarrillos();
-                lblAmarillo.ForeColor = Color.FromArgb(241, 236, 37);
-                lblAmarillo.Text = "0";
+                enciendeTodosAmarillos();
+                lblDisplayAmarillo.ForeColor = Color.FromArgb(241, 236, 37);
+                lblDisplayAmarillo.Text = "0";
                 bolIntermitentePrendida = true;
             }
         }
-
-        private void lblControl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        public void CambiarTiempos()
-        {
-            swDisplayCont=1;
-            contarTiempos = 1;
-            lblVerde9.Text = contarTiempos.ToString();
-            tiempoRojo = int.Parse(txtRojo.Text)*1000;
-            tiempoAmarillo = int.Parse(txtAmarilo.Text)*1000;
-            tiempoVerde = int.Parse(txtVerde.Text)*1000;
-            tiempoVerdePrp = int.Parse(txtVerdePrp.Text)*1000;
-            total = (tiempoRojo + tiempoAmarillo + tiempoVerde + tiempoVerdePrp) / 1000;
-            tmrDisplay.Interval = 1;
-        }
         #endregion
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnCambioTiempo_Click(object sender, EventArgs e)
         {
-            CambiarTiempos();
             tmrDisplay.Start();
-            timer1.Start();
+            tmrCambioSemaforos.Start();
             btnDetener.Enabled = true;
             btnIniciar.Enabled = false;
-            btnCambioTiempo.Enabled = false;
         }
     }
 }
