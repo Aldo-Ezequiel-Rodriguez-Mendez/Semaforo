@@ -3,7 +3,7 @@ Proyecto de Sistemas programables
 
 PROYECTO HECHO POR <3 :
 
-┏━━━━━━━━━━━━━━━━━━━❖(^･ｪ･^)❖━━━━━━━━━━━━━━━━━━━━┓
+┏━━━━━━━━━━━━━━━❖(^･ｪ･^)❖━━━━━━━━━━━━━━━━┓
 
 ✧ Myriam Yazmin Patiño Segura     #19100231
 
@@ -11,6 +11,6 @@ PROYECTO HECHO POR <3 :
 
 ✧ AlMy✧❤️✧
 
-┗━━━━━━━━━━━━━━━━━❖(^･ｪ･^)❖━━━━━━━━━━━━━━━━━━━━━━┛
+┗━━━━━━━━━━━━━━━❖(^･ｪ･^)❖━━━━━━━━━━━━━━━┛
 
 ![Semaforo](semaforo.png)
