@@ -50,6 +50,7 @@
             this.pcbIzquierdaH = new System.Windows.Forms.PictureBox();
             this.tmrPreventivas = new System.Windows.Forms.Timer(this.components);
             this.lblVerdeAuxiliar = new System.Windows.Forms.Label();
+            this.tmrCambioDisplays = new System.Windows.Forms.Timer(this.components);
             this.pnlGroup.SuspendLayout();
             this.pnlMenuControl.SuspendLayout();
             this.pnlControl.SuspendLayout();
@@ -104,33 +105,33 @@
             // lblDisplayRojo
             // 
             this.lblDisplayRojo.AutoSize = true;
-            this.lblDisplayRojo.Font = new System.Drawing.Font("SF Digital Readout", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDisplayRojo.Font = new System.Drawing.Font("SF Digital Readout", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDisplayRojo.ForeColor = System.Drawing.SystemColors.GrayText;
             this.lblDisplayRojo.Location = new System.Drawing.Point(14, 0);
             this.lblDisplayRojo.Name = "lblDisplayRojo";
-            this.lblDisplayRojo.Size = new System.Drawing.Size(73, 90);
+            this.lblDisplayRojo.Size = new System.Drawing.Size(77, 97);
             this.lblDisplayRojo.TabIndex = 28;
             this.lblDisplayRojo.Text = "0";
             // 
             // lblDisplayAmarillo
             // 
             this.lblDisplayAmarillo.AutoSize = true;
-            this.lblDisplayAmarillo.Font = new System.Drawing.Font("SF Digital Readout", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDisplayAmarillo.Font = new System.Drawing.Font("SF Digital Readout", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDisplayAmarillo.ForeColor = System.Drawing.SystemColors.GrayText;
             this.lblDisplayAmarillo.Location = new System.Drawing.Point(131, 0);
             this.lblDisplayAmarillo.Name = "lblDisplayAmarillo";
-            this.lblDisplayAmarillo.Size = new System.Drawing.Size(73, 90);
+            this.lblDisplayAmarillo.Size = new System.Drawing.Size(77, 97);
             this.lblDisplayAmarillo.TabIndex = 27;
             this.lblDisplayAmarillo.Text = "0";
             // 
             // lblDisplayVerde
             // 
             this.lblDisplayVerde.AutoSize = true;
-            this.lblDisplayVerde.Font = new System.Drawing.Font("SF Digital Readout", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDisplayVerde.Font = new System.Drawing.Font("SF Digital Readout", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDisplayVerde.ForeColor = System.Drawing.Color.DimGray;
             this.lblDisplayVerde.Location = new System.Drawing.Point(253, 0);
             this.lblDisplayVerde.Name = "lblDisplayVerde";
-            this.lblDisplayVerde.Size = new System.Drawing.Size(73, 90);
+            this.lblDisplayVerde.Size = new System.Drawing.Size(77, 97);
             this.lblDisplayVerde.TabIndex = 26;
             this.lblDisplayVerde.Text = "0";
             // 
@@ -220,8 +221,7 @@
             // 
             this.pcbDerechaV.BackColor = System.Drawing.Color.Transparent;
             this.pcbDerechaV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            frmSimulacion frmSimulacion = this;
-            frmSimulacion.pcbDerechaV.Image = global::Practica_3.Properties.Resources.SMVLeftOf;
+            this.pcbDerechaV.Image = global::Practica_3.Properties.Resources.SMVLeftOf;
             this.pcbDerechaV.Location = new System.Drawing.Point(822, 70);
             this.pcbDerechaV.Name = "pcbDerechaV";
             this.pcbDerechaV.Size = new System.Drawing.Size(57, 104);
@@ -277,8 +277,8 @@
             // 
             // tmrPreventivas
             // 
-            this.tmrPreventivas.Interval = 800;
-            this.tmrPreventivas.Tick += new System.EventHandler(this.tmrIntermitentes_Tick);
+            this.tmrPreventivas.Interval = 500;
+            this.tmrPreventivas.Tick += new System.EventHandler(this.tmrPreventias_Tick);
             // 
             // lblVerdeAuxiliar
             // 
@@ -291,6 +291,11 @@
             this.lblVerdeAuxiliar.TabIndex = 25;
             this.lblVerdeAuxiliar.Text = "0";
             this.lblVerdeAuxiliar.Visible = false;
+            // 
+            // tmrCambioDisplays
+            // 
+            this.tmrCambioDisplays.Interval = 500;
+            this.tmrCambioDisplays.Tick += new System.EventHandler(this.tmrCambioDisplays_Tick);
             // 
             // frmSimulacion
             // 
@@ -348,6 +353,7 @@
         private System.Windows.Forms.Button btnPreventivas;
         private System.Windows.Forms.Timer tmrPreventivas;
         private System.Windows.Forms.Label lblVerdeAuxiliar;
+        private System.Windows.Forms.Timer tmrCambioDisplays;
     }
 }
 
