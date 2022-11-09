@@ -26,6 +26,6 @@ Dentro del proyecto de visual studio se seleccionan los displays y se cambia
 
 el tipo de letra a SF Digital Redount 
 
-![error](Visual1.png)
+![error](Visual1.PNG)
 
 ![error](Visual2.png)
