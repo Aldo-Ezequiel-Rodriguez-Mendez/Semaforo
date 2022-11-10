@@ -44,8 +44,9 @@ namespace Practica_3
                 case 2:
                     
                     lblDisplayVerde.Text = contarTiempo.ToString();
+                    lblDisplayVerde.ForeColor = Color.Green;
                     if (contarTiempo == (segundosVerdePrp / 1000)+1)
-                    {
+                    {             
                         casoConteoDisplay = 3;
                         contarTiempo = 1;
                         lblDisplayVerde.Text = "0";
@@ -155,7 +156,7 @@ namespace Practica_3
 
         #endregion
 
-        #region Menu de Control
+        #region Menu de Control\
         private void btnIniciar_Click(object sender, EventArgs e)
         {
             segundosVerde = 15000;
@@ -205,6 +206,11 @@ namespace Practica_3
         }
         int segundosRojo=0, segundosAmarillo=0, segundosVerde=0, segundosVerdePrp=0;
 
+        private void frmSimulacion_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void tmrCambioDisplays_Tick(object sender, EventArgs e)
         {
             switch (casoConteoDisplay)
@@ -212,15 +218,18 @@ namespace Practica_3
                 case 1:
                     if (contarTiempo == (segundosVerde / 1000) + 1)
                     {
-                        System.Threading.Thread.Sleep(200);
+                        System.Threading.Thread.Sleep(100);
                         lblDisplayVerde.Text = "0";
                         lblDisplayVerde.ForeColor = Color.DimGray;
                     }
                     break;
                 case 2:
+                    System.Threading.Thread.Sleep(100);
+                    lblDisplayVerde.Text = "0";
+                    lblDisplayVerde.ForeColor = Color.DimGray; 
                     if (contarTiempo == (segundosVerdePrp / 1000) + 1)
                     {
-                        System.Threading.Thread.Sleep(200);
+                        System.Threading.Thread.Sleep(100);
                         lblDisplayVerde.Text = "0";
                         lblDisplayVerde.ForeColor = Color.DimGray;
                     }
@@ -228,7 +237,7 @@ namespace Practica_3
                 case 3:
                     if (contarTiempo == (segundosAmarillo / 1000) + 1)
                     {
-                        System.Threading.Thread.Sleep(200);
+                        System.Threading.Thread.Sleep(100);
                         lblDisplayAmarillo.Text = "0";
                         lblDisplayAmarillo.ForeColor = Color.DimGray;
                     }
@@ -258,7 +267,7 @@ namespace Practica_3
 
         //Timer para el control de cambio de color en los semáforos
         private void tmrCambioSemaforos_Tick_1(object sender, EventArgs e)
-        {
+        {         
             switch (caso)
             {
                 case 1:                                                                     // CASO 1 - enciende en VERDE
@@ -279,8 +288,9 @@ namespace Practica_3
                         apagaTodosH();
                     };           
                     tmrCambioSemaforos.Interval = 500;                                      
-                    if (contadorApagado == segundosVerdePrp / 1000){                        //  PARPADEO del semáforo (apagado)
-                        tmrCambioSemaforos.Interval = 500; caso = 4; contadorApagado = 0;   
+                    if (contadorApagado == segundosVerdePrp / 1000){
+                        System.Threading.Thread.Sleep(100);//  PARPADEO del semáforo (apagado)
+                        tmrCambioSemaforos.Interval = 500; caso = 4; contadorApagado = 0;
                     }                                                                       
                     else {
                         caso = 3;
@@ -293,7 +303,9 @@ namespace Practica_3
                     else {
                         enciendeVerdeH();
                     }                
-                    tmrCambioSemaforos.Interval = 500; contadorApagado++; caso = 2; break;  //PARPADEO del semáforo (encendido) regresando al caso 2  
+                    tmrCambioSemaforos.Interval = 500; contadorApagado++; caso = 2;        //PARPADEO del semáforo (encendido) regresando al caso 2
+                    
+                    break;    
                 case 4:                                                                     //CASO 3 - enciende en AMARILLO
                     if (cicloVertical) {
                         enciendeAmarilloV();
@@ -321,7 +333,8 @@ namespace Practica_3
                 case 7:
                     if (cicloVertical) {
                         cicloVertical = false;
-                        apagaTodosH(); }
+                        apagaTodosH();
+                    }
                     else {
                         cicloVertical = true;
                         apagaTodosV();

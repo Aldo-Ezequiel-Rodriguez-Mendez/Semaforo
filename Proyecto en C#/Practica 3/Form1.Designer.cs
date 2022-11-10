@@ -315,6 +315,7 @@
             this.MinimumSize = new System.Drawing.Size(1296, 754);
             this.Name = "frmSimulacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frmSimulacion_Load);
             this.pnlGroup.ResumeLayout(false);
             this.pnlGroup.PerformLayout();
             this.pnlMenuControl.ResumeLayout(false);
