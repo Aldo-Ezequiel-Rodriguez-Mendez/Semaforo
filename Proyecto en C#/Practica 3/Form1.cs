@@ -241,6 +241,7 @@ namespace Practica_3
             {
                 apagaTodos();
                 ApagarDisplays();
+                lblDisplayAmarillo.Text = " ";
                 bolPreventivasPrendida = false;
             }
             else
