@@ -31,10 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.pnlGroup = new System.Windows.Forms.Panel();
             this.btnPreventivas = new System.Windows.Forms.Button();
-            this.pnlMenuControl = new System.Windows.Forms.Panel();
-            this.lblDisplayRojo = new System.Windows.Forms.Label();
-            this.lblDisplayAmarillo = new System.Windows.Forms.Label();
-            this.lblDisplayVerde = new System.Windows.Forms.Label();
             this.btnDetener = new System.Windows.Forms.Button();
             this.btnIniciar = new System.Windows.Forms.Button();
             this.lblEtiquetaRoja = new System.Windows.Forms.Label();
@@ -42,6 +38,10 @@
             this.lblEtiquetaVerde = new System.Windows.Forms.Label();
             this.pnlControl = new System.Windows.Forms.Panel();
             this.lblControl = new System.Windows.Forms.Label();
+            this.pnlMenuControl = new System.Windows.Forms.Panel();
+            this.lblDisplayRojo = new System.Windows.Forms.Label();
+            this.lblDisplayAmarillo = new System.Windows.Forms.Label();
+            this.lblDisplayVerde = new System.Windows.Forms.Label();
             this.pcbDerechaV = new System.Windows.Forms.PictureBox();
             this.pcbIzquierdaV = new System.Windows.Forms.PictureBox();
             this.pcbDerechaH = new System.Windows.Forms.PictureBox();
@@ -52,8 +52,8 @@
             this.lblVerdeAuxiliar = new System.Windows.Forms.Label();
             this.tmrCambioDisplays = new System.Windows.Forms.Timer(this.components);
             this.pnlGroup.SuspendLayout();
-            this.pnlMenuControl.SuspendLayout();
             this.pnlControl.SuspendLayout();
+            this.pnlMenuControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbDerechaV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbIzquierdaV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbDerechaH)).BeginInit();
@@ -64,8 +64,8 @@
             // 
             this.pnlGroup.BackColor = System.Drawing.Color.Transparent;
             this.pnlGroup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlGroup.Controls.Add(this.btnPreventivas);
             this.pnlGroup.Controls.Add(this.pnlMenuControl);
+            this.pnlGroup.Controls.Add(this.btnPreventivas);
             this.pnlGroup.Controls.Add(this.btnDetener);
             this.pnlGroup.Controls.Add(this.btnIniciar);
             this.pnlGroup.Controls.Add(this.lblEtiquetaRoja);
@@ -89,51 +89,6 @@
             this.btnPreventivas.Text = "Preventivas";
             this.btnPreventivas.UseVisualStyleBackColor = false;
             this.btnPreventivas.Click += new System.EventHandler(this.btnPreventivas_Click);
-            // 
-            // pnlMenuControl
-            // 
-            this.pnlMenuControl.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pnlMenuControl.Controls.Add(this.lblDisplayRojo);
-            this.pnlMenuControl.Controls.Add(this.lblDisplayAmarillo);
-            this.pnlMenuControl.Controls.Add(this.lblDisplayVerde);
-            this.pnlMenuControl.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.pnlMenuControl.Location = new System.Drawing.Point(3, 53);
-            this.pnlMenuControl.Name = "pnlMenuControl";
-            this.pnlMenuControl.Size = new System.Drawing.Size(361, 96);
-            this.pnlMenuControl.TabIndex = 26;
-            // 
-            // lblDisplayRojo
-            // 
-            this.lblDisplayRojo.AutoSize = true;
-            this.lblDisplayRojo.Font = new System.Drawing.Font("SF Digital Readout", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDisplayRojo.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblDisplayRojo.Location = new System.Drawing.Point(14, 0);
-            this.lblDisplayRojo.Name = "lblDisplayRojo";
-            this.lblDisplayRojo.Size = new System.Drawing.Size(77, 97);
-            this.lblDisplayRojo.TabIndex = 28;
-            this.lblDisplayRojo.Text = "0";
-            // 
-            // lblDisplayAmarillo
-            // 
-            this.lblDisplayAmarillo.AutoSize = true;
-            this.lblDisplayAmarillo.Font = new System.Drawing.Font("SF Digital Readout", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDisplayAmarillo.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblDisplayAmarillo.Location = new System.Drawing.Point(131, 0);
-            this.lblDisplayAmarillo.Name = "lblDisplayAmarillo";
-            this.lblDisplayAmarillo.Size = new System.Drawing.Size(77, 97);
-            this.lblDisplayAmarillo.TabIndex = 27;
-            this.lblDisplayAmarillo.Text = "0";
-            // 
-            // lblDisplayVerde
-            // 
-            this.lblDisplayVerde.AutoSize = true;
-            this.lblDisplayVerde.Font = new System.Drawing.Font("SF Digital Readout", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDisplayVerde.ForeColor = System.Drawing.Color.DimGray;
-            this.lblDisplayVerde.Location = new System.Drawing.Point(253, 0);
-            this.lblDisplayVerde.Name = "lblDisplayVerde";
-            this.lblDisplayVerde.Size = new System.Drawing.Size(77, 97);
-            this.lblDisplayVerde.TabIndex = 26;
-            this.lblDisplayVerde.Text = "0";
             // 
             // btnDetener
             // 
@@ -216,6 +171,51 @@
             this.lblControl.Size = new System.Drawing.Size(229, 29);
             this.lblControl.TabIndex = 0;
             this.lblControl.Text = "Menú de control";
+            // 
+            // pnlMenuControl
+            // 
+            this.pnlMenuControl.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pnlMenuControl.Controls.Add(this.lblDisplayRojo);
+            this.pnlMenuControl.Controls.Add(this.lblDisplayAmarillo);
+            this.pnlMenuControl.Controls.Add(this.lblDisplayVerde);
+            this.pnlMenuControl.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.pnlMenuControl.Location = new System.Drawing.Point(3, 55);
+            this.pnlMenuControl.Name = "pnlMenuControl";
+            this.pnlMenuControl.Size = new System.Drawing.Size(361, 96);
+            this.pnlMenuControl.TabIndex = 26;
+            // 
+            // lblDisplayRojo
+            // 
+            this.lblDisplayRojo.AutoSize = true;
+            this.lblDisplayRojo.Font = new System.Drawing.Font("SF Digital Readout", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDisplayRojo.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lblDisplayRojo.Location = new System.Drawing.Point(14, 0);
+            this.lblDisplayRojo.Name = "lblDisplayRojo";
+            this.lblDisplayRojo.Size = new System.Drawing.Size(77, 97);
+            this.lblDisplayRojo.TabIndex = 28;
+            this.lblDisplayRojo.Text = "0";
+            // 
+            // lblDisplayAmarillo
+            // 
+            this.lblDisplayAmarillo.AutoSize = true;
+            this.lblDisplayAmarillo.Font = new System.Drawing.Font("SF Digital Readout", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDisplayAmarillo.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lblDisplayAmarillo.Location = new System.Drawing.Point(131, 0);
+            this.lblDisplayAmarillo.Name = "lblDisplayAmarillo";
+            this.lblDisplayAmarillo.Size = new System.Drawing.Size(77, 97);
+            this.lblDisplayAmarillo.TabIndex = 27;
+            this.lblDisplayAmarillo.Text = "0";
+            // 
+            // lblDisplayVerde
+            // 
+            this.lblDisplayVerde.AutoSize = true;
+            this.lblDisplayVerde.Font = new System.Drawing.Font("SF Digital Readout", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDisplayVerde.ForeColor = System.Drawing.Color.DimGray;
+            this.lblDisplayVerde.Location = new System.Drawing.Point(253, 0);
+            this.lblDisplayVerde.Name = "lblDisplayVerde";
+            this.lblDisplayVerde.Size = new System.Drawing.Size(77, 97);
+            this.lblDisplayVerde.TabIndex = 26;
+            this.lblDisplayVerde.Text = "0";
             // 
             // pcbDerechaV
             // 
@@ -315,13 +315,12 @@
             this.MinimumSize = new System.Drawing.Size(1296, 754);
             this.Name = "frmSimulacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.frmSimulacion_Load);
             this.pnlGroup.ResumeLayout(false);
             this.pnlGroup.PerformLayout();
-            this.pnlMenuControl.ResumeLayout(false);
-            this.pnlMenuControl.PerformLayout();
             this.pnlControl.ResumeLayout(false);
             this.pnlControl.PerformLayout();
+            this.pnlMenuControl.ResumeLayout(false);
+            this.pnlMenuControl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbDerechaV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbIzquierdaV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbDerechaH)).EndInit();
